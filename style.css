@@ -10,6 +10,7 @@ header {
 #posts-container {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 4px;
     background-color: rgba(240, 248, 255, 0.238);
     width: 90vw;
     padding: 18px;
@@ -18,9 +19,11 @@ header {
 }
 
 #post {
-    background-color: rgba(127, 255, 212, 0.522);
+    display: flex;
+    background-color: rgba(245, 245, 245, 0.527);
     margin: 8px;
     padding: 5px;
+    justify-content: center;
 }
 
 #post-image {
@@ -29,4 +32,5 @@ header {
 
 #post-title {
     font-style: italic;
+    text-align: center;
 }
