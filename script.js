@@ -11,12 +11,28 @@ async function startApp() {
   const allPosts = await getPosts();
 
   console.log(allPosts);
-  console.log(arrayExample);
 }
 
 async function getPosts() {
   const response = await fetch(`${endpoint}/posts.json`);
   const data = await response.json();
+  console.log(data);
 
-  return data;
+  const allPostsArray = preparePostData(data);
+
+  return allPostsArray;
 }
+
+function preparePostData(dataObject) {
+  const postArray = [];
+
+  for (const key in dataObject) {
+    const post = dataObject[key];
+    post.id = key;
+    postArray.push(post);
+  }
+
+  return postArray;
+}
+
+function showPosts() {}
