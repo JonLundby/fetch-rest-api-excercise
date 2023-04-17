@@ -1,8 +1,32 @@
 body {
     background-color: dimgray;
+    user-select: none;
 }
 
-/* #posts-container {
+header {
+    text-align: center;
+}
+
+#posts-container {
     display: grid;
-    grid-template-columns: 1;
-} */
+    grid-template-columns: 1fr;
+    background-color: rgba(240, 248, 255, 0.238);
+    width: 90vw;
+    padding: 18px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#post {
+    background-color: rgba(127, 255, 212, 0.522);
+    margin: 8px;
+    padding: 5px;
+}
+
+#post-image {
+    position: relative;
+}
+
+#post-title {
+    font-style: italic;
+}

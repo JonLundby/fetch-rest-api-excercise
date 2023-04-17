@@ -3,7 +3,7 @@
 window.addEventListener("load", startApp);
 
 const endpoint = "https://test01-6591a-default-rtdb.europe-west1.firebasedatabase.app";
-const arrayExample = [2, 6, 2, 1];
+//const arrayExample = [2, 6, 2, 1];
 
 async function startApp() {
   console.log("window loaded and startApp called...");
@@ -11,6 +11,9 @@ async function startApp() {
   const allPosts = await getPosts();
 
   console.log(allPosts);
+  for (const element of allPosts) {
+    displayPosts(element);
+  }
 }
 
 async function getPosts() {
@@ -35,4 +38,12 @@ function preparePostData(dataObject) {
   return postArray;
 }
 
-function showPosts() {}
+function displayPosts(allPosts) {
+  const postsGridItem = /*html*/ `
+                    <div id="post">
+                      <div id="post-image"><img src="${allPosts.image}"></div>
+                      <p id="post-title">${allPosts.title}</p>
+                    </div>`;
+  
+  document.querySelector("#posts-container").insertAdjacentHTML("beforeend", postsGridItem);
+}
