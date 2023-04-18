@@ -6,8 +6,6 @@ const endpoint = "https://test01-6591a-default-rtdb.europe-west1.firebasedatabas
 //const arrayExample = [2, 6, 2, 1];
 
 async function startApp() {
-  console.log("window loaded and startApp called...");
-
   const allPosts = await getPosts();
 
   console.log(allPosts);
@@ -41,8 +39,8 @@ function preparePostData(dataObject) {
 function displayPosts(allPosts) {
   const postsGridItem = /*html*/ `
                     <div id="post">
-                      <div id="post-image"><img src="${allPosts.image}"></div>
                       <p id="post-title">${allPosts.title}</p>
+                      <div id="post-image"><img src="${allPosts.image}"></div>
                     </div>`;
   
   document.querySelector("#posts-container").insertAdjacentHTML("beforeend", postsGridItem);

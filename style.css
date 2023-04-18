@@ -19,11 +19,12 @@ header {
 }
 
 #post {
-    display: flex;
-    background-color: rgba(245, 245, 245, 0.527);
+    display: grid;
+    grid-template-columns: auto;
+    background-color: rgba(185, 176, 176, 0.322);
     margin: 8px;
     padding: 5px;
-    justify-content: center;
+    place-content: center;
 }
 
 #post-image {
@@ -31,6 +32,7 @@ header {
 }
 
 #post-title {
+    position: relative;
     font-style: italic;
     text-align: center;
 }
