@@ -9,6 +9,7 @@ async function startApp() {
   const allPosts = await getPosts();
 
   console.log(allPosts);
+
   for (const element of allPosts) {
     displayPosts(element);
   }
@@ -41,6 +42,7 @@ function displayPosts(allPosts) {
                     <div id="post">
                       <p id="post-title">${allPosts.title}</p>
                       <div id="post-image"><img src="${allPosts.image}"></div>
+                      <p id="post-body">${allPosts.body}</p>
                     </div>`;
   
   document.querySelector("#posts-container").insertAdjacentHTML("beforeend", postsGridItem);

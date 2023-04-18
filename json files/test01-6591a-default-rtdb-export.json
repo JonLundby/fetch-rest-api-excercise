@@ -1,0 +1,28 @@
+{
+  "posts": {
+    "00": {
+      "image": "https://images.unsplash.com/photo-1465779171454-aa85ccf23be6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8bG9vcHN8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60",
+      "title": "I really love loops.js 💫"
+    },
+    "01": {
+      "image": "https://images.unsplash.com/photo-1642013126529-f674c5b87dbe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwxNXx8fHx8fDJ8fDE2NDIwNzUwMzQ&ixlib=rb-1.2.1&q=60&w=600",
+      "title": "Slow Mornings in Bed ☕️"
+    },
+    "02": {
+      "image": "https://images.unsplash.com/photo-1642044658495-ef626a9cb2c9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyOTA4MTB8MHwxfGFsbHwyOHx8fHx8fDJ8fDE2NDIwNzUwNzQ&ixlib=rb-1.2.1&q=60&w=600",
+      "title": "Every Day is Flower Day 🌷"
+    },
+    "04": {
+      "image": "https://www.seobility.net/en/wiki/images/f/f1/Rest-API.png",
+      "title": "APIs are awesome..."
+    },
+    "05": {
+      "image": "https://live.staticflickr.com/65535/36181542744_80e51c710e_b.jpg",
+      "title": "A juniper tree..."
+    },
+    "06": {
+      "image": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Dostoevsky_140-190_for_collage.jpg",
+      "title": "Great writer..."
+    }
+  }
+}
