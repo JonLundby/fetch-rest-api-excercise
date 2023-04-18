@@ -19,7 +19,7 @@ async function startApp() {
     displayUsers(element);
   }
 
-  createPost("some title", null, "some body text...");
+  //createPost("some title", null, "some body text...");
 }
 
 //    ---- POST FUNCTIONS ----    \\
