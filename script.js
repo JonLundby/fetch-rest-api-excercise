@@ -68,11 +68,23 @@ function displayPost(post) {
 
   function updatePostClicked() {
     console.log("post update btn clicked...");
-    updatePost();
+    const title = "Dostojevskij";
+    const image = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Dostoevsky_140-190_for_collage.jpg";
+    const body = "A great writer!";
+    updatePost(post.id, title, image, body);
   }
 
-  function updatePost() {
+  async function updatePost(id, title, image, body) {
     console.log("updating post...");
+    const postToUpdate = { title, body, image };
+    const postUpdateToJson = JSON.stringify(postToUpdate);
+
+    const response = await fetch(`${endpoint}/posts/${id}.json`, { method: "PUT", body: postUpdateToJson });
+    
+    if (response.ok) {
+      console.log("post has been updated!");
+      updatePostsGrid();
+    }
   }
 
   function deletePostClicked() {
@@ -82,11 +94,10 @@ function displayPost(post) {
   async function deletePost(id) {
     const response = await fetch(`${endpoint}/posts/${id}.json`, { method: "DELETE" });
     if (response.ok) {
-      console.log("post deleted!")
+      console.log("post deleted!");
       updatePostsGrid();
     }
   }
-
 }
 
 async function updatePostsGrid() {
@@ -101,7 +112,6 @@ function displayPosts(posts) {
     displayPost(element);
   }
 }
-
 
 async function createPost(title, image, body) {
   const newPost = {
