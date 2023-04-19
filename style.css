@@ -29,6 +29,10 @@ header {
   place-content: center;
 }
 
+#post:hover {
+    background-color: rgba(185, 176, 176, 0.645);
+}
+
 #post-image > img {
   position: relative;
   object-fit: cover;
@@ -71,6 +75,10 @@ header {
   place-content: center;
 }
 
+#user:hover {
+  background-color: rgba(185, 176, 176, 0.626);
+}
+
 #user-image > img {
   position: relative;
   object-fit: cover;
@@ -89,4 +97,8 @@ header {
   position: relative;
   font-style: italic;
   text-align: center;
+}
+
+button {
+  background-color: gainsboro;
 }
