@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="#" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
     <title>fetch-rest-api-excercise</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Fetch-rest-api-excercise</h1>
-        <h3>POSTS</h3>
+      <h1>Fetch-rest-api-excercise</h1>
+      <h3>POSTS</h3>
     </header>
-    
-    <div id="posts-container">
-        
-    </div>
-    
+
+    <div id="posts-container"></div>
+
     <div id="create-post-input-container">
-        <label for="new-title">Title:</label>
-        <input type="text" id="new-title" name="new-title">
-        <label for="new-image">Image(url):</label>
-        <input type="text" id="new-image" name="new-image">
-        <label for="new-description">Description:</label>
-        <input type="text" id="new-description" name="new-description">
+      <label for="new-title">Title:</label>
+      <input type="text" id="new-title" name="new-title" value="" />
+      <label for="new-image">Image(url):</label>
+      <input type="text" id="new-image" name="new-image" value="" />
+      <label for="new-description">Description:</label>
+      <input type="text" id="new-description" name="new-description" value="" />
     </div>
-    <button id="create-post-btn" onclick="createPost()">Create new post?</button>
-
-    <hr>
+    <button id="create-post-btn">Create new post?</button>
+    <!-- onclick="createPost()" -->
+    <hr />
 
     <header>
-        <h3>USERS</h3>
+      <h3>USERS</h3>
     </header>
 
-    <div id="users-container">
-        
-    </div>
-
+    <div id="users-container"></div>
 
     <dialog open>
-        <button>Close?</button>
+      <button>Close?</button>
     </dialog>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

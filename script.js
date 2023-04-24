@@ -5,7 +5,6 @@ window.addEventListener("load", startApp);
 const endpoint = "https://test01-6591a-default-rtdb.europe-west1.firebasedatabase.app";
 //const arrayExample = [2, 6, 2, 1];
 
-
 async function startApp() {
   // const allPosts = await getPosts();
   // const allusers = await getUsers();
@@ -67,9 +66,11 @@ function displayPost(post) {
 
   document.querySelector("#posts-container").insertAdjacentHTML("beforeend", postsGridItem);
 
+  document.querySelector("#create-post-btn").addEventListener("click", createPostClicked);
   document.querySelector("#post:last-child .update").addEventListener("click", updatePostClicked);
   document.querySelector("#post:last-child .delete").addEventListener("click", deletePostClicked);
 
+  //UPDATE POST
   function updatePostClicked() {
     //console.log("post update btn clicked...");
     const title = "Dostojevskij";
@@ -91,6 +92,7 @@ function displayPost(post) {
     }
   }
 
+  //DELETE POST
   function deletePostClicked() {
     deletePost(post.id);
   }
@@ -104,17 +106,29 @@ function displayPost(post) {
   }
 }
 
+
 async function updatePostsGrid() {
   const posts = await getPosts();
   //displayPost(posts);
   displayPosts(posts);
 }
 
+//DISPLAY POSTS
 function displayPosts(posts) {
   document.querySelector("#posts-container").innerHTML = "";
   for (const element of posts) {
     displayPost(element);
   }
+}
+
+//CREATE POST
+function createPostClicked() {
+  console.log("CreatePostClicked called...")
+  const newTitle = document.querySelector("#new-title").value;
+  const newImage = document.querySelector("#new-image").value;
+  const newDescription = document.querySelector("#new-description").value;
+    
+  createPost(newTitle, newImage, newDescription);
 }
 
 async function createPost(title, image, body) {
@@ -126,16 +140,18 @@ async function createPost(title, image, body) {
   };
 
   const newPostAsJson = JSON.stringify(newPost);
-  //console.log(newPostAsJson);
+  console.log(newPostAsJson);
 
   const response = await fetch(`${endpoint}/posts.json`, {
     method: "POST",
     body: newPostAsJson,
   });
-  console.log(response);
+  //console.log(response);
 
-  const data = await response.json();
-  console.log(data);
+  //const data = await response.json();
+  //console.log(data);
+
+  updatePostsGrid();
 }
 
 //    ---- USER FUNCTIONS ----    \\
