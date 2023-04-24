@@ -5,6 +5,7 @@ window.addEventListener("load", startApp);
 const endpoint = "https://test01-6591a-default-rtdb.europe-west1.firebasedatabase.app";
 //const arrayExample = [2, 6, 2, 1];
 
+
 async function startApp() {
   // const allPosts = await getPosts();
   // const allusers = await getUsers();
@@ -20,6 +21,8 @@ async function startApp() {
   // }
 
   updatePostsGrid();
+
+  updateUsersGrid();
 
   //createPost("some title", null, "some body text...");
 }
@@ -41,6 +44,7 @@ function preparePostData(dataObject) {
 
   for (const key in dataObject) {
     const post = dataObject[key];
+    console.log("post is:" + post);
     post.id = key;
     postArray.push(post);
   }
@@ -67,7 +71,7 @@ function displayPost(post) {
   document.querySelector("#post:last-child .delete").addEventListener("click", deletePostClicked);
 
   function updatePostClicked() {
-    console.log("post update btn clicked...");
+    //console.log("post update btn clicked...");
     const title = "Dostojevskij";
     const image = "https://upload.wikimedia.org/wikipedia/commons/2/2f/Dostoevsky_140-190_for_collage.jpg";
     const body = "A great writer!";
@@ -80,7 +84,7 @@ function displayPost(post) {
     const postUpdateToJson = JSON.stringify(postToUpdate);
 
     const response = await fetch(`${endpoint}/posts/${id}.json`, { method: "PUT", body: postUpdateToJson });
-    
+
     if (response.ok) {
       console.log("post has been updated!");
       updatePostsGrid();
@@ -114,6 +118,7 @@ function displayPosts(posts) {
 }
 
 async function createPost(title, image, body) {
+  console.log("creatPost was called...");
   const newPost = {
     title: title,
     image: image,
@@ -127,9 +132,9 @@ async function createPost(title, image, body) {
     method: "POST",
     body: newPostAsJson,
   });
-  //console.log(response);
+  console.log(response);
 
-  const data = response.json();
+  const data = await response.json();
   console.log(data);
 }
 
@@ -157,7 +162,7 @@ function prepareUserData(dataObject) {
   return userArray;
 }
 
-function displayUsers(allUsers) {
+function displayUser(allUsers) {
   const usersGridItem = /*html*/ `
                     <div id="user">
                       <div id="user-image"><img src="${allUsers.image}"></div>
@@ -170,6 +175,18 @@ function displayUsers(allUsers) {
   document.querySelector("#users-container").insertAdjacentHTML("beforeend", usersGridItem);
 
   document.querySelector("#user:last-child").addEventListener("click", userDetailView);
+}
+
+async function updateUsersGrid() {
+  const users = await getUsers();
+  displayUsers(users);
+}
+
+function displayUsers(allUsers) {
+  document.querySelector("#users-container").innerHTML = "";
+  for (const user of allUsers) {
+    displayUser(user);
+  }
 }
 
 function userDetailView() {

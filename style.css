@@ -9,6 +9,42 @@ header {
 
 /*      ----    POSTS    ----        */
 
+#create-post-input-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 4px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 350px;
+}
+
+#new-title {
+  width: 200px;
+}
+
+#new-image {
+  width: 200px;
+  height: 60px;
+}
+
+#new-description {
+  width: 200px;
+  height: 200px;
+}
+#create-post-btn {
+  display: grid;
+  width: 80px;
+  height: 50px;
+  margin: 10px;
+  background-color:  rgba(215, 179, 179, 0.679);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
 #posts-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -51,6 +87,13 @@ header {
   position: relative;
   font-style: italic;
   text-align: center;
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10%;
+  margin: auto;
 }
 
 /*      ----    USER    ----        */
