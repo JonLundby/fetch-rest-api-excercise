@@ -12,32 +12,67 @@
     <header>
       <h1>Fetch-rest-api-excercise</h1>
       <h3>POSTS</h3>
+      <button id="create-new-post-btn">Create new post?</button>
     </header>
 
-    <div id="posts-container"></div>
-
-    <div id="create-post-input-container">
-      <label for="new-title">Title:</label>
-      <input type="text" id="new-title" name="new-title" value="" />
-      <label for="new-image">Image(url):</label>
-      <input type="text" id="new-image" name="new-image" value="" />
-      <label for="new-description">Description:</label>
-      <input type="text" id="new-description" name="new-description" value="" />
+    <div id="posts-container">
+      <!-- posts are inserted here by js -->
     </div>
-    <button id="create-post-btn">Create new post?</button>
-    <!-- onclick="createPost()" -->
+
     <hr />
 
     <header>
       <h3>USERS</h3>
     </header>
 
-    <div id="users-container"></div>
+    <div id="users-container">
+      <!-- posts are inserted here by js -->
+    </div>
 
-    <dialog open>
-      <button>Close?</button>
+<!-- CREATE POST DIALOG -->
+    <dialog id="create-new-post-dialog">
+      <form action="" id="create-new-post-form">
+        <label for="create-title">Title:</label>
+        <input type="text" id="create-title" name="title" placeholder="type a new title..."/>
+        
+        <label for="create-image">Image(url):</label>
+        <input type="text" id="create-image" name="image" placeholder="type a new url for image..."/>
+        
+        <label for="create-description">Description:</label>
+        <input type="text" id="create-description" name="body" placeholder="type a new description..."/>
+        
+        <button id="create-post-btn">Create post?</button>
+      </form>
     </dialog>
 
+<!-- UPDATE POST DIALOG -->
+    <dialog id="update-post-dialog">
+      <h2>Update Post</h2>
+      <form action="" id="update-post-form">
+        <label for="update-title">Title:</label>
+        <input type="text" id="update-title" name="title" placeholder="type a new title..."/>
+        
+        <label for="update-image">Image(url):</label>
+        <input type="text" id="update-image" name="image"/ placeholder="type a new url for image...">
+        
+        <label for="update-description">Description:</label>
+        <input type="text" id="update-description" name="body" placeholder="type a new description..."/>
+        
+        <button id="create-post-btn">update post?</button>
+      </form>
+    </dialog>
+
+<!-- DELETE POST DIALOG -->
+    <dialog id="delete-post-dialog">
+      <h2>Are you sure you want to delete?!</h2>
+      <p id="dialog-delete-title"></p>
+      <form action="" method="dialog" id="delete-post-form">
+        <button type="button" id="delete-btn-cancel">Cancel</button>
+        <button>Delete</button>
+      </form>
+    </dialog>
+
+<!-- SCRIPT -->
     <script src="script.js"></script>
   </body>
 </html>
